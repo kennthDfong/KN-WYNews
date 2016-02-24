@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6h7-5A-aT0">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="2n1-Vm-Umr">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rvk-lj-trI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="3Rz-ID-Ujm" customClass="KNHostTabBarController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bfc-jT-Ugj"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZgY-od-aEU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Tb-d5-Wdo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="fKO-0m-PUy"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-96" y="498"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="dh1-tf-Jp9">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCs-0v-IB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="e6L-XE-poD" customClass="KNHostTabBarController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ebj-9K-oXo"/>
+                        <viewControllerLayoutGuide type="bottom" id="HVu-oz-57d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t0c-QO-CGU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="oez-XY-Mhj"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-96" y="-163"/>
+        </scene>
+        <!--Host Tab Bar Controller-->
+        <scene sceneID="Rzg-41-7uF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jDe-cl-piQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="6h7-5A-aT0" customClass="KNHostTabBarController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="zY0-O9-oUm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="e6L-XE-poD" kind="relationship" relationship="viewControllers" id="zE9-Mw-eao"/>
+                        <segue destination="3Rz-ID-Ujm" kind="relationship" relationship="viewControllers" id="Y5e-GL-4O4"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-916" y="168"/>
+        </scene>
+    </scenes>
+</document>
