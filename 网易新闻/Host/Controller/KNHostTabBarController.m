@@ -102,10 +102,10 @@
     [tabBar addBarButtonWithNormalStateImageName:@"tabbar_icon_news_normal"  DisImage:@"tabbar_icon_news_highlight"  title:@"新闻"];
     
     
-        [tabBar addBarButtonWithNormalStateImageName:@"tabbar_icon_reader_normal"  DisImage:@"tabbar_icon_reader_highlight" title:@"阅读"];
+    [tabBar addBarButtonWithNormalStateImageName:@"tabbar_icon_reader_normal"  DisImage:@"tabbar_icon_reader_highlight" title:@"阅读"];
     [tabBar addBarButtonWithNormalStateImageName:@"tabbar_icon_media_normal"  DisImage:@"tabbar_icon_media_highlight" title:@"视听"];
-    [tabBar addBarButtonWithNormalStateImageName:@"tabbar_icon_reader_normal"  DisImage:@"tabbar_icon_found_highlight" title:@"发现"];
-    [tabBar addBarButtonWithNormalStateImageName:@"tabbar_icon_reader_normal"  DisImage:@"tabbar_icon_me_highlight" title:@"我"];
+    [tabBar addBarButtonWithNormalStateImageName:@"tabbar_icon_found_normal"  DisImage:@"tabbar_icon_found_highlight" title:@"发现"];
+    [tabBar addBarButtonWithNormalStateImageName:@"tabbar_icon_me_normal"  DisImage:@"tabbar_icon_me_highlight" title:@"我"];
     self.selectedIndex = 0;
 }
 

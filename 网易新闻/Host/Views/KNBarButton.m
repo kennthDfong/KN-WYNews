@@ -31,7 +31,9 @@
     self.titleLabel.x = self.imageView.x - (self.titleLabel.width - self.imageView.width) / 2.0;
     self.titleLabel.y = CGRectGetMaxY(self.imageView.frame ) + 2;
     
-    self.titleLabel.font = [UIFont fontWithName:@"HYQiHei" size:10];
+    
+    //这里如果用其他的非系统所有的字体，则会出现死循环
+    self.titleLabel.font = [UIFont systemFontOfSize:10];
     self.titleLabel.shadowColor = [UIColor clearColor];
     //向中心对齐
     self.titleLabel.textAlignment = NSTextAlignmentCenter;

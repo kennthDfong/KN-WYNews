@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		448E3A931C7ECAAA0068B5F6 /* NewsURLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 448E3A921C7ECAAA0068B5F6 /* NewsURLs.plist */; };
+		448E3A971C7ED10C0068B5F6 /* SXDetails.css in Resources */ = {isa = PBXBuildFile; fileRef = 448E3A961C7ED10C0068B5F6 /* SXDetails.css */; };
+		448E3A991C7ED1160068B5F6 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 448E3A981C7ED1160068B5F6 /* TemplateIcon2x.png */; };
+		448E3A9C1C7ED8DE0068B5F6 /* KNNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 448E3A9B1C7ED8DE0068B5F6 /* KNNavController.m */; };
+		448E3AA21C7EDA220068B5F6 /* KNHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 448E3AA11C7EDA220068B5F6 /* KNHostViewController.m */; };
+		448E3AA51C7EDEE20068B5F6 /* KNTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 448E3AA41C7EDEE20068B5F6 /* KNTitleLabel.m */; };
+		448E3AB21C7EF0210068B5F6 /* KNNewsTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 448E3AAF1C7EF0210068B5F6 /* KNNewsTabViewController.m */; };
+		448E3AB41C7EF9D20068B5F6 /* news.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448E3AB31C7EF9D20068B5F6 /* news.storyboard */; };
+		448E3AB71C7F19640068B5F6 /* KNNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 448E3AB61C7F19640068B5F6 /* KNNewsCell.m */; };
+		448E3ABA1C7F19910068B5F6 /* KNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 448E3AB91C7F19910068B5F6 /* KNewsModel.m */; };
 		44985B681C7D7B1400BD7B61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44985B671C7D7B1400BD7B61 /* main.m */; };
 		44985B6B1C7D7B1400BD7B61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44985B6A1C7D7B1400BD7B61 /* AppDelegate.m */; };
-		44985B6E1C7D7B1400BD7B61 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44985B6D1C7D7B1400BD7B61 /* ViewController.m */; };
 		44985B711C7D7B1400BD7B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44985B6F1C7D7B1400BD7B61 /* Main.storyboard */; };
 		44985B731C7D7B1400BD7B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44985B721C7D7B1400BD7B61 /* Assets.xcassets */; };
-		44985B761C7D7B1500BD7B61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44985B741C7D7B1500BD7B61 /* LaunchScreen.storyboard */; };
 		44985B831C7D7CDF00BD7B61 /* HYQiHei-50J.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44985B811C7D7CDF00BD7B61 /* HYQiHei-50J.ttf */; };
-		44985B841C7D7CDF00BD7B61 /* NewsURLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44985B821C7D7CDF00BD7B61 /* NewsURLs.plist */; };
 		44985B871C7D80B500BD7B61 /* KNADManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44985B861C7D80B500BD7B61 /* KNADManager.m */; };
 		44985B8B1C7D813300BD7B61 /* KNNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44985B8A1C7D813300BD7B61 /* KNNetworkManager.m */; };
 		44985B9C1C7DCB2200BD7B61 /* KNHostTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44985B9B1C7DCB2200BD7B61 /* KNHostTabBarController.m */; };
@@ -26,18 +33,30 @@
 
 /* Begin PBXFileReference section */
 		372154C4BF105076A18A854F /* Pods-网易新闻.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.debug.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.debug.xcconfig"; sourceTree = "<group>"; };
+		448E3A921C7ECAAA0068B5F6 /* NewsURLs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewsURLs.plist; sourceTree = "<group>"; };
+		448E3A961C7ED10C0068B5F6 /* SXDetails.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = SXDetails.css; sourceTree = "<group>"; };
+		448E3A981C7ED1160068B5F6 /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
+		448E3A9A1C7ED8DE0068B5F6 /* KNNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNNavController.h; sourceTree = "<group>"; };
+		448E3A9B1C7ED8DE0068B5F6 /* KNNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNNavController.m; sourceTree = "<group>"; };
+		448E3AA01C7EDA220068B5F6 /* KNHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNHostViewController.h; sourceTree = "<group>"; };
+		448E3AA11C7EDA220068B5F6 /* KNHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNHostViewController.m; sourceTree = "<group>"; };
+		448E3AA31C7EDEE20068B5F6 /* KNTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNTitleLabel.h; sourceTree = "<group>"; };
+		448E3AA41C7EDEE20068B5F6 /* KNTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNTitleLabel.m; sourceTree = "<group>"; };
+		448E3AAE1C7EF0210068B5F6 /* KNNewsTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNNewsTabViewController.h; sourceTree = "<group>"; };
+		448E3AAF1C7EF0210068B5F6 /* KNNewsTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNNewsTabViewController.m; sourceTree = "<group>"; };
+		448E3AB31C7EF9D20068B5F6 /* news.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = news.storyboard; sourceTree = "<group>"; };
+		448E3AB51C7F19640068B5F6 /* KNNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNNewsCell.h; sourceTree = "<group>"; };
+		448E3AB61C7F19640068B5F6 /* KNNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNNewsCell.m; sourceTree = "<group>"; };
+		448E3AB81C7F19910068B5F6 /* KNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNewsModel.h; sourceTree = "<group>"; };
+		448E3AB91C7F19910068B5F6 /* KNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNewsModel.m; sourceTree = "<group>"; };
 		44985B631C7D7B1400BD7B61 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44985B671C7D7B1400BD7B61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		44985B691C7D7B1400BD7B61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		44985B6A1C7D7B1400BD7B61 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		44985B6C1C7D7B1400BD7B61 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		44985B6D1C7D7B1400BD7B61 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		44985B701C7D7B1400BD7B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44985B721C7D7B1400BD7B61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		44985B751C7D7B1500BD7B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44985B771C7D7B1500BD7B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44985B811C7D7CDF00BD7B61 /* HYQiHei-50J.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HYQiHei-50J.ttf"; sourceTree = "<group>"; };
-		44985B821C7D7CDF00BD7B61 /* NewsURLs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewsURLs.plist; sourceTree = "<group>"; };
 		44985B851C7D80B500BD7B61 /* KNADManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNADManager.h; sourceTree = "<group>"; };
 		44985B861C7D80B500BD7B61 /* KNADManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNADManager.m; sourceTree = "<group>"; };
 		44985B891C7D813300BD7B61 /* KNNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNNetworkManager.h; sourceTree = "<group>"; };
@@ -66,6 +85,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		448E3AA91C7EEF840068B5F6 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				448E3AAD1C7EF0210068B5F6 /* Controller */,
+				448E3AB01C7EF0210068B5F6 /* Model */,
+				448E3AB11C7EF0210068B5F6 /* View */,
+				448E3AB31C7EF9D20068B5F6 /* news.storyboard */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		448E3AAD1C7EF0210068B5F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				448E3AAE1C7EF0210068B5F6 /* KNNewsTabViewController.h */,
+				448E3AAF1C7EF0210068B5F6 /* KNNewsTabViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		448E3AB01C7EF0210068B5F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				448E3AB81C7F19910068B5F6 /* KNewsModel.h */,
+				448E3AB91C7F19910068B5F6 /* KNewsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		448E3AB11C7EF0210068B5F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				448E3AB51C7F19640068B5F6 /* KNNewsCell.h */,
+				448E3AB61C7F19640068B5F6 /* KNNewsCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		44985B5A1C7D7B1400BD7B61 = {
 			isa = PBXGroup;
 			children = (
@@ -89,12 +146,9 @@
 			children = (
 				44985B691C7D7B1400BD7B61 /* AppDelegate.h */,
 				44985B6A1C7D7B1400BD7B61 /* AppDelegate.m */,
-				44985B6C1C7D7B1400BD7B61 /* ViewController.h */,
-				44985B6D1C7D7B1400BD7B61 /* ViewController.m */,
 				44985B6F1C7D7B1400BD7B61 /* Main.storyboard */,
-				44985B721C7D7B1400BD7B61 /* Assets.xcassets */,
-				44985B741C7D7B1500BD7B61 /* LaunchScreen.storyboard */,
 				44985B981C7DCB2200BD7B61 /* Host */,
+				448E3AA91C7EEF840068B5F6 /* News */,
 				44985B7E1C7D7C4F00BD7B61 /* Library */,
 				44985B7F1C7D7C4F00BD7B61 /* Models */,
 				44985BA41C7DD08E00BD7B61 /* Categories */,
@@ -107,10 +161,13 @@
 		44985B661C7D7B1400BD7B61 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				44985B721C7D7B1400BD7B61 /* Assets.xcassets */,
+				448E3A961C7ED10C0068B5F6 /* SXDetails.css */,
 				44985B811C7D7CDF00BD7B61 /* HYQiHei-50J.ttf */,
-				44985B821C7D7CDF00BD7B61 /* NewsURLs.plist */,
+				448E3A921C7ECAAA0068B5F6 /* NewsURLs.plist */,
 				44985B771C7D7B1500BD7B61 /* Info.plist */,
 				44985B671C7D7B1400BD7B61 /* main.m */,
+				448E3A981C7ED1160068B5F6 /* TemplateIcon2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,6 +220,10 @@
 			children = (
 				44985B9A1C7DCB2200BD7B61 /* KNHostTabBarController.h */,
 				44985B9B1C7DCB2200BD7B61 /* KNHostTabBarController.m */,
+				448E3A9A1C7ED8DE0068B5F6 /* KNNavController.h */,
+				448E3A9B1C7ED8DE0068B5F6 /* KNNavController.m */,
+				448E3AA01C7EDA220068B5F6 /* KNHostViewController.h */,
+				448E3AA11C7EDA220068B5F6 /* KNHostViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,6 +235,8 @@
 				44985B9F1C7DCB5400BD7B61 /* KNTabBar.m */,
 				44985BA11C7DD05700BD7B61 /* KNBarButton.h */,
 				44985BA21C7DD05700BD7B61 /* KNBarButton.m */,
+				448E3AA31C7EDEE20068B5F6 /* KNTitleLabel.h */,
+				448E3AA41C7EDEE20068B5F6 /* KNTitleLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,10 +330,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				44985B831C7D7CDF00BD7B61 /* HYQiHei-50J.ttf in Resources */,
-				44985B761C7D7B1500BD7B61 /* LaunchScreen.storyboard in Resources */,
-				44985B841C7D7CDF00BD7B61 /* NewsURLs.plist in Resources */,
+				448E3A931C7ECAAA0068B5F6 /* NewsURLs.plist in Resources */,
+				448E3A971C7ED10C0068B5F6 /* SXDetails.css in Resources */,
+				448E3AB41C7EF9D20068B5F6 /* news.storyboard in Resources */,
 				44985B731C7D7B1400BD7B61 /* Assets.xcassets in Resources */,
 				44985B711C7D7B1400BD7B61 /* Main.storyboard in Resources */,
+				448E3A991C7ED1160068B5F6 /* TemplateIcon2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,13 +395,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				44985B9C1C7DCB2200BD7B61 /* KNHostTabBarController.m in Sources */,
-				44985B6E1C7D7B1400BD7B61 /* ViewController.m in Sources */,
 				44985BA31C7DD05700BD7B61 /* KNBarButton.m in Sources */,
+				448E3ABA1C7F19910068B5F6 /* KNewsModel.m in Sources */,
 				44985B6B1C7D7B1400BD7B61 /* AppDelegate.m in Sources */,
+				448E3AA51C7EDEE20068B5F6 /* KNTitleLabel.m in Sources */,
 				44985B681C7D7B1400BD7B61 /* main.m in Sources */,
+				448E3AB21C7EF0210068B5F6 /* KNNewsTabViewController.m in Sources */,
+				448E3AA21C7EDA220068B5F6 /* KNHostViewController.m in Sources */,
 				44985B871C7D80B500BD7B61 /* KNADManager.m in Sources */,
+				448E3AB71C7F19640068B5F6 /* KNNewsCell.m in Sources */,
 				44985BA01C7DCB5400BD7B61 /* KNTabBar.m in Sources */,
 				44985BA71C7DD0EE00BD7B61 /* UIView+KNFrame.m in Sources */,
+				448E3A9C1C7ED8DE0068B5F6 /* KNNavController.m in Sources */,
 				44985B8B1C7D813300BD7B61 /* KNNetworkManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,14 +420,6 @@
 				44985B701C7D7B1400BD7B61 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		44985B741C7D7B1500BD7B61 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				44985B751C7D7B1500BD7B61 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
