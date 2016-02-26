@@ -19,10 +19,12 @@
 /** 评论数*/
 @property (weak, nonatomic) IBOutlet UILabel *commentNumLabel;
 
+/** 副标题*/
 @property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
 
+/** 多图时，第二张图*/
 @property (weak, nonatomic) IBOutlet UIImageView *imgView2;
-
+/** 多图时，第三张图*/
 @property (weak, nonatomic) IBOutlet UIImageView *imgView3;
 
 @end
@@ -77,9 +79,9 @@
 //重新setter   一赋值，则执行
 - (void)setNewsModel:(KNewsModel *)newsModel {
     
-    newsModel = newsModel;
+    _newsModel = newsModel;
     
-    [self.imgIcon sd_setImageWithURL:[NSURL URLWithString:self.newsModel.imgsrc] placeholderImage:[UIImage imageNamed:@"302"]];
+    [self.imgIcon sd_setImageWithURL:[NSURL URLWithString:self.newsModel.imgsrc] placeholderImage:[UIImage imageNamed:@"wangyi"]];
     self.titleLabel.text = self.newsModel.title;
     self.subTitleLabel.text = self.newsModel.digest;
     
@@ -99,8 +101,8 @@
         
         //sdWebImage 发送下载和缓存图片
         
-        [self.imgView2 sd_setImageWithURL:[NSURL URLWithString:self.newsModel.imgextra[0][@"imgsrc"]] placeholderImage:[UIImage imageNamed:@"302"]];
-        [self.imgView3 sd_setImageWithURL:[NSURL URLWithString:self.newsModel.imgextra[1][@"imgsrc"]] placeholderImage:[UIImage imageNamed:@"302"]];
+        [self.imgView2 sd_setImageWithURL:[NSURL URLWithString:self.newsModel.imgextra[0][@"imgsrc"]] placeholderImage:[UIImage imageNamed:@"wangyi"]];
+        [self.imgView3 sd_setImageWithURL:[NSURL URLWithString:self.newsModel.imgextra[1][@"imgsrc"]] placeholderImage:[UIImage imageNamed:@"wangyi"]];
     }
     
     

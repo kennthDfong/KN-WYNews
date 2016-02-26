@@ -247,7 +247,8 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="imgIcon" destination="mfw-wy-Fre" id="XCq-fp-d0Y"/>
-                                    <outlet property="titleLabel" destination="ak9-pT-aN2" id="4QA-Ir-pEL"/>
+                                    <outlet property="subTitleLabel" destination="ak9-pT-aN2" id="Sf2-N0-jhs"/>
+                                    <outlet property="titleLabel" destination="ofQ-rr-613" id="hHp-FL-Abh"/>
                                     <segue destination="g2W-W8-GPA" kind="show" id="qS4-pe-OcM">
                                         <nil key="action"/>
                                     </segue>
@@ -329,7 +330,7 @@
                                     </segue>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopTxtCell" rowHeight="245" id="yAo-8h-Ct2" customClass="KNNewsCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopTextCell" rowHeight="245" id="yAo-8h-Ct2" customClass="KNNewsCell">
                                 <rect key="frame" x="0.0" y="647" width="375" height="245"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yAo-8h-Ct2" id="1I2-QL-Tgq">

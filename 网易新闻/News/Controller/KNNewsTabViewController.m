@@ -134,21 +134,57 @@ typedef enum : NSUInteger {
 }
 
 
-#pragma - mark tabelView 代理和数据源相关方法
+#pragma - mark tabelView 数据源相关方法
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 1;
+    return self.newsArray.count;
     
 }
 
 - (KNNewsCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *idStr;
+    KNewsModel *newsModel = self.newsArray[indexPath.row];
+    
+    NSString *idStr = [KNNewsCell idForRow:newsModel];
+    
+    if ((indexPath.row % 20 == 0) &&
+         indexPath.row != 0) {
+        idStr = @"NewsCell";
+    }
     
     KNNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:idStr];
     
+    cell.newsModel = newsModel;
     
     return cell;
 }
+
+#pragma - mark tableView 代理相关方法
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    KNewsModel *newsModel = self.newsArray[indexPath.row];
+    
+    CGFloat rowHeight = [KNNewsCell heightForRow:newsModel];
+    
+    if ((indexPath.row % 20 == 0) &&
+         (indexPath.row != 0)) {
+        rowHeight = 80.0;
+    }
+    
+    return rowHeight;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+/** cell不变色*/
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UIViewController *vc = [UIViewController new];
+    vc.view.backgroundColor = [UIColor yellowColor];
+    
+}
+
 @end

@@ -18,13 +18,17 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *titleScollerView;
 /** 内容视图*/
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScollerView;
+
 /** 标题中的label*/
-@property (nonatomic, strong) KNTitleLabel *titleLabel;
+//@property (nonatomic, strong) KNTitleLabel *titleLabel;
+
 /** 记录开始的编译*/
 @property (nonatomic, assign) CGFloat beginOffsetX;
 
 /** 新闻数组*/
 @property (nonatomic, strong) NSArray *newsTitleArray;
+
+
 /** */
 @property (nonatomic, strong) UIImageView *tran;
 /** */
@@ -58,7 +62,19 @@
     
     [self configContentScorllView];
 
+    //设置刚进入的样式
     
+    //取出添加的第一个控制器，tableView controller
+    UIViewController *defaultVC = self.childViewControllers.firstObject;
+    
+    //self 是hostViewController
+    defaultVC.view.frame = self.contentScollerView.bounds;
+    [self.contentScollerView addSubview:defaultVC.view];
+    //取出第一个
+    KNTitleLabel *titleLabel = self.titleScollerView.subviews.firstObject;
+
+    //红色，字体放大
+    titleLabel.scale  = 1.0;
 }
 
 #pragma - mark  ***** 设置标题视图相关 *****
@@ -70,7 +86,8 @@
     
     [self addLabel];
     
-    self.titleScollerView.contentSize = CGSizeMake(self.titleLabel.width * self.newsTitleArray.count, 0);
+    self.titleScollerView.contentSize = CGSizeMake(70 * self.newsTitleArray.count, 0);
+    NSLog(@"%@", [NSString stringWithFormat:@"%lf",self.titleScollerView.contentSize.width]);
 }
 
 - (void)addLabel {
@@ -124,6 +141,12 @@
 #pragma - mark ***** 设置内容视图相关 *****
 - (void)configContentScorllView {
     self.contentScollerView.delegate = self;
+    
+    CGFloat contentWidth = self.childViewControllers.count * [UIScreen mainScreen].bounds.size.width;
+    
+    self.contentScollerView.contentSize = CGSizeMake(contentWidth, 0);
+    self.contentScollerView.pagingEnabled = YES;
+    self.contentScollerView.showsHorizontalScrollIndicator = NO;
 }
 
 //添加TableViewController，减少主控制器负担和代码量
@@ -149,11 +172,13 @@
     
     
     // 索引 ＝ X的偏移 / 宽
+
     NSUInteger index = scrollView.contentOffset.x / self.contentScollerView.width;
     KNTitleLabel *titleLabel = (KNTitleLabel *)self.titleScollerView.subviews[index];
     //需要移动时，让label的中点刚好是view的中点
     CGFloat offsetX =  titleLabel.center.x - self.titleScollerView.width * 0.5;
     CGFloat offsetMax = self.titleScollerView.contentSize.width - self.titleScollerView.width;
+    
     if (offsetX < 0) {
         offsetX = 0;
     } else if (offsetX > offsetMax) {
@@ -168,7 +193,7 @@
     newsVC.index = index;
     
     [self.titleScollerView.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL * _Nonnull stop) {
-       
+        
         if (idx != index) {
             //将不是被选中的label 字体恢复为原样;
             KNTitleLabel *otherLabel = self.titleScollerView.subviews[idx];
@@ -209,7 +234,7 @@
     lableLeft.scale = scaleLeft;
     
     if (rightIndex < self.titleScollerView.subviews.count) {
-        KNTitleLabel *labelRight = self.contentScollerView.subviews[rightIndex];
+        KNTitleLabel *labelRight = self.titleScollerView.subviews[rightIndex];
         labelRight.scale = scaleRight;
     }
     
