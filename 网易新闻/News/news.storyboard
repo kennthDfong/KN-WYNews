@@ -584,10 +584,10 @@
             </objects>
             <point key="canvasLocation" x="455.5" y="-666.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Reply View Controller-->
         <scene sceneID="8Ui-je-5M2">
             <objects>
-                <viewController id="WMp-It-ldb" sceneMemberID="viewController">
+                <viewController id="WMp-It-ldb" customClass="KNReplyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qG6-hI-QPN"/>
                         <viewControllerLayoutGuide type="bottom" id="XJ5-rN-Yyq"/>
@@ -601,7 +601,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="replyCell" rowHeight="81" id="9l6-pJ-Foa" customClass="SXReplyCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="replyCell" rowHeight="81" id="9l6-pJ-Foa" customClass="KNReplyCell">
                                         <rect key="frame" x="0.0" y="22" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9l6-pJ-Foa" id="kIA-qL-bpF">
@@ -686,7 +686,10 @@
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="supposeLabel" destination="pfP-zs-t3h" id="fpL-De-buv"/>
+                                            <outlet property="addressLabel" destination="w8z-86-2n8" id="bOE-Sb-39M"/>
+                                            <outlet property="nameLabel" destination="s31-Qn-irI" id="Jzw-XU-MLN"/>
+                                            <outlet property="sayLabel" destination="ruN-Nl-f7X" id="Etw-vB-6t2"/>
+                                            <outlet property="supposeButton" destination="OXD-Xj-0bX" id="guN-ey-zFc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -727,20 +730,15 @@
         <!--新闻详情-->
         <scene sceneID="D3q-il-6uT">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="g2W-W8-GPA" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="g2W-W8-GPA" customClass="KNDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bUM-JY-Vfn"/>
                         <viewControllerLayoutGuide type="bottom" id="86H-QY-ykc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vlg-NL-h2z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jqj-YQ-wp2">
-                                <rect key="frame" x="0.0" y="55" width="375" height="1145"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u70-Sz-fFF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                 <subviews>
@@ -776,7 +774,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                                        <state key="normal" title="1.2万跟帖" backgroundImage="contentview_commentbacky">
+                                        <state key="normal" title="0.0万跟帖" backgroundImage="contentview_commentbacky">
                                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -800,29 +798,34 @@
                                     <constraint firstAttribute="height" constant="55" id="aHh-hT-tIm"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6sY-uE-uy6">
+                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Jqj-YQ-wp2" firstAttribute="top" secondItem="vlg-NL-h2z" secondAttribute="top" constant="55" id="FUE-IW-0Hc"/>
                             <constraint firstItem="u70-Sz-fFF" firstAttribute="top" secondItem="vlg-NL-h2z" secondAttribute="top" id="KOx-8W-kph"/>
+                            <constraint firstItem="6sY-uE-uy6" firstAttribute="top" secondItem="u70-Sz-fFF" secondAttribute="bottom" id="ORu-QY-OVh"/>
                             <constraint firstAttribute="trailing" secondItem="u70-Sz-fFF" secondAttribute="trailing" id="Ug8-w4-ojI"/>
-                            <constraint firstItem="Jqj-YQ-wp2" firstAttribute="leading" secondItem="vlg-NL-h2z" secondAttribute="leading" id="Zuc-SP-6d9"/>
-                            <constraint firstItem="86H-QY-ykc" firstAttribute="top" secondItem="Jqj-YQ-wp2" secondAttribute="bottom" id="pJ9-4U-Hij"/>
-                            <constraint firstAttribute="trailing" secondItem="Jqj-YQ-wp2" secondAttribute="trailing" id="ti4-jR-m2M"/>
+                            <constraint firstItem="86H-QY-ykc" firstAttribute="top" secondItem="6sY-uE-uy6" secondAttribute="bottom" id="geE-g6-JAW"/>
+                            <constraint firstItem="6sY-uE-uy6" firstAttribute="leading" secondItem="vlg-NL-h2z" secondAttribute="leading" id="icq-tl-cgC"/>
+                            <constraint firstAttribute="trailing" secondItem="6sY-uE-uy6" secondAttribute="trailing" id="rbh-VI-wxK"/>
                             <constraint firstItem="u70-Sz-fFF" firstAttribute="leading" secondItem="vlg-NL-h2z" secondAttribute="leading" id="ztS-xX-aMO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="新闻详情" id="LJQ-jJ-tpc">
                         <barButtonItem key="rightBarButtonItem" image="002" id="fba-gO-3so"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="webView" destination="Jqj-YQ-wp2" id="6Xt-CV-xNJ"/>
-                    </connections>
+                    <value key="contentSizeForViewInPopover" type="size" width="375" height="677"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COB-C6-Csp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455.5" y="367"/>
+            <point key="canvasLocation" x="532.5" y="355"/>
         </scene>
     </scenes>
     <resources>
@@ -841,8 +844,8 @@
         <image name="weather_share" width="45" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rlg-wx-mSj"/>
         <segue reference="qS4-pe-OcM"/>
+        <segue reference="rlg-wx-mSj"/>
         <segue reference="NMu-qR-aGp"/>
     </inferredMetricsTieBreakers>
 </document>

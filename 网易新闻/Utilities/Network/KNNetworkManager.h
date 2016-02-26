@@ -29,6 +29,8 @@ typedef void(^failureBlock)(NSURLSessionTask *task, NSError *error);
 /** 返回常规对象，使用get方法需要添加详细url*/
 + (instancetype)shareNetworkManger;
 
++ (instancetype)shareOperationManager;
+
 /** 使用session的GET方法*/
 - (void)GET:(NSString *)URLstr params:(id)params success:(successBlock)successBlock failure:(failureBlock)failureBlock;
 @end

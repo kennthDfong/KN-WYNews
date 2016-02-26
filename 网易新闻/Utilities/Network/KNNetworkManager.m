@@ -50,7 +50,25 @@
     return manager;
 }
 
++ (instancetype)shareOperationManager {
+    
+    KNNetworkManager *manager = [[self alloc]init];
+    
+    AFHTTPSessionManager *HTTPMgr = [AFHTTPSessionManager manager];
+    
+    NSMutableSet *mgrSet = [NSMutableSet set];
+    
+    mgrSet.set = HTTPMgr.responseSerializer.acceptableContentTypes;
+    
+    [mgrSet addObject:@"text/html"];
+    
+    HTTPMgr.responseSerializer.acceptableContentTypes = mgrSet;
+    
+    manager.HTTPSessionManager = HTTPMgr;
 
+    return manager;
+
+}
 
 //将方法定义在工具类中，方便以后第三方库有更改时，只需要修改工具类中的实现，则能完成代码的修改。
 - (void)GET:(NSString *)URLstr params:(id)params success:(successBlock)successBlock failure:(failureBlock)failureBlock {
