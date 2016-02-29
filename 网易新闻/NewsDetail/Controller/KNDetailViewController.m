@@ -10,15 +10,33 @@
 #import "KNDetailImgModel.h"
 #import "KNDetailModel.h"
 #import "KNNetworkManager.h"
+#import "KNReplyModel.h"
+#import "KNReplyViewController.h"
+#import "KNNewsDetailButtomCell.h"
+#import "KNSameNewsEntity.h"
+
+
+#define NewsDetailControllerClose (self.tableView.contentOffset.y - (self.tableView.contentSize.height - SXSCREEN_H + 55) > (100 - 54))
+
+@interface KNDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *replyButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 
+@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) KNDetailModel *detailModel;
+@property (nonatomic, strong) KNNewsDetailButtomCell *closeCell;
 
-@interface KNDetailViewController ()
-
+- (IBAction)backBtnClick:(id)sender;
 @end
 
 @implementation KNDetailViewController
+- (IBAction)replyBtnClikc:(id)sender {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,4 +58,6 @@
 }
 */
 
+- (IBAction)backBtnClick:(id)sender {
+}
 @end

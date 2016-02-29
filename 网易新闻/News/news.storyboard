@@ -761,6 +761,7 @@
                                         </state>
                                         <connections>
                                             <action selector="back:" destination="WMp-It-ldb" eventType="touchUpInside" id="k6Z-aM-ZYj"/>
+                                            <action selector="backBtnClick:" destination="g2W-W8-GPA" eventType="touchUpInside" id="q6I-Ah-A94"/>
                                         </connections>
                                     </button>
                                     <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIU-6b-RUr">
@@ -786,6 +787,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="replyBtnClikc:" destination="g2W-W8-GPA" eventType="touchUpInside" id="o8c-Sb-RzG"/>
                                             <segue destination="WMp-It-ldb" kind="show" id="NMu-qR-aGp">
                                                 <nil key="action"/>
                                             </segue>
@@ -809,6 +811,10 @@
                                 <rect key="frame" x="0.0" y="55" width="375" height="612"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="g2W-W8-GPA" id="EQM-Sl-xtO"/>
+                                    <outlet property="delegate" destination="g2W-W8-GPA" id="4xf-u7-2Xh"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -829,10 +835,15 @@
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="677"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="backButton" destination="aux-Nf-RyS" id="tsx-wL-rvz"/>
+                        <outlet property="replyButton" destination="lld-Vs-FOt" id="HVI-Q9-eUM"/>
+                        <outlet property="tableView" destination="6sY-uE-uy6" id="DyG-Kf-Of3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COB-C6-Csp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532.5" y="355"/>
+            <point key="canvasLocation" x="531.5" y="259.5"/>
         </scene>
     </scenes>
     <resources>
@@ -851,7 +862,7 @@
         <image name="weather_share" width="45" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qS4-pe-OcM"/>
+        <segue reference="3uk-h7-LbE"/>
         <segue reference="rlg-wx-mSj"/>
         <segue reference="NMu-qR-aGp"/>
     </inferredMetricsTieBreakers>

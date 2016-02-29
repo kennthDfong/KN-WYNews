@@ -9,7 +9,7 @@
 #import "KNReplyViewController.h"
 #import "KNReplyHeaderVIew.h"
 #import "KNReplyCell.h"
-
+#import "UIView+KNFrame.h"
 @interface KNReplyViewController () <UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,40 +23,92 @@
 static NSString *identifier = @"replyCell";
 
 - (IBAction)backBtnClick:(id)sender {
-    
-    //从系统的栈中pop出一个controller
+        //从系统的栈中pop出一个controller
     [self.navigationController popViewControllerAnimated:YES];
 
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    //设置不进行缩进
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if (self.replyArray.count == 0) {
+        return 1;
+    }
+    
+    
+    return self.replyArray.count;
     
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //设置不进行缩进
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    //预估tableViewCell 的height 提高性能
+    self.tableView.estimatedRowHeight = 130;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    KNReplyCell *cell =  [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[KNReplyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    if (self.replyArray.count == 0) {
+        UITableViewCell *cell2 = [[UITableViewCell alloc]init];
+        cell2.textLabel.text = @"     暂无跟帖数据";
+        return cell2;
+    } else {
+        KNReplyModel *model = self.replyArray[indexPath.row];
+        cell.replyModel = model;
+    }
+    
+    return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//返回来那个section的分区头
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+ 
+    if (section == 0) {
+        return [KNReplyHeaderVIew replyViewFirst];
+    } else {
+        return [KNReplyHeaderVIew replyViewLast];
+    }
+    
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //没有回复，不需要设置height
+    if (self.replyArray.count == 0) {
+        return 40;
+    } else {
+        KNReplyCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        KNReplyModel *model =  self.replyArray[indexPath.row];
+        cell.replyModel = model;
+        
+        //重新布局
+        [cell layoutIfNeeded];
+        //获得cellLabel 适应字体后的大小
+        CGSize size = [cell.sayLabel systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+        
+        //y坐标 + 调整过之后的高 + 10
+        return  cell.sayLabel.y + size.height + 10;
+    }
+}
+
 
 @end
