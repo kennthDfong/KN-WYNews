@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443EAD201C8479F000BFAFB5 /* Details.css in Resources */ = {isa = PBXBuildFile; fileRef = 443EAD1F1C8479F000BFAFB5 /* Details.css */; };
 		448E3A9C1C7ED8DE0068B5F6 /* KNNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 448E3A9B1C7ED8DE0068B5F6 /* KNNavController.m */; };
 		448E3AA21C7EDA220068B5F6 /* KNHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 448E3AA11C7EDA220068B5F6 /* KNHostViewController.m */; };
 		448E3AA51C7EDEE20068B5F6 /* KNTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 448E3AA41C7EDEE20068B5F6 /* KNTitleLabel.m */; };
@@ -27,7 +28,6 @@
 		44E5B27C1C80396300C7206A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44E5B2751C80396300C7206A /* Info.plist */; };
 		44E5B27D1C80396300C7206A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E5B2761C80396300C7206A /* main.m */; };
 		44E5B27E1C80396300C7206A /* NewsURLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44E5B2771C80396300C7206A /* NewsURLs.plist */; };
-		44E5B27F1C80396300C7206A /* SXDetails.css in Resources */ = {isa = PBXBuildFile; fileRef = 44E5B2781C80396300C7206A /* SXDetails.css */; };
 		44E5B2801C80396300C7206A /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44E5B2791C80396300C7206A /* TemplateIcon2x.png */; };
 		44E5B28F1C803AB600C7206A /* KNDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E5B28E1C803AB600C7206A /* KNDetailViewController.m */; };
 		44E5B2921C803B8D00C7206A /* KNDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E5B2911C803B8D00C7206A /* KNDetailModel.m */; };
@@ -45,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		372154C4BF105076A18A854F /* Pods-网易新闻.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.debug.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.debug.xcconfig"; sourceTree = "<group>"; };
+		443EAD1F1C8479F000BFAFB5 /* Details.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Details.css; sourceTree = "<group>"; };
 		448E3A9A1C7ED8DE0068B5F6 /* KNNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNNavController.h; sourceTree = "<group>"; };
 		448E3A9B1C7ED8DE0068B5F6 /* KNNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNNavController.m; sourceTree = "<group>"; };
 		448E3AA01C7EDA220068B5F6 /* KNHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNHostViewController.h; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		44E5B2751C80396300C7206A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44E5B2761C80396300C7206A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		44E5B2771C80396300C7206A /* NewsURLs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewsURLs.plist; sourceTree = "<group>"; };
-		44E5B2781C80396300C7206A /* SXDetails.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = SXDetails.css; sourceTree = "<group>"; };
 		44E5B2791C80396300C7206A /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
 		44E5B28D1C803AB600C7206A /* KNDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNDetailViewController.h; sourceTree = "<group>"; };
 		44E5B28E1C803AB600C7206A /* KNDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNDetailViewController.m; sourceTree = "<group>"; };
@@ -198,10 +198,10 @@
 			children = (
 				44E5B2731C80396300C7206A /* Assets.xcassets */,
 				44E5B2741C80396300C7206A /* HYQiHei-50J.ttf */,
+				443EAD1F1C8479F000BFAFB5 /* Details.css */,
 				44E5B2751C80396300C7206A /* Info.plist */,
 				44E5B2761C80396300C7206A /* main.m */,
 				44E5B2771C80396300C7206A /* NewsURLs.plist */,
-				44E5B2781C80396300C7206A /* SXDetails.css */,
 				44E5B2791C80396300C7206A /* TemplateIcon2x.png */,
 			);
 			name = "Supporting Files";
@@ -485,8 +485,8 @@
 				44E5B27A1C80396300C7206A /* Assets.xcassets in Resources */,
 				44E5B27E1C80396300C7206A /* NewsURLs.plist in Resources */,
 				44E5B2801C80396300C7206A /* TemplateIcon2x.png in Resources */,
-				44E5B27F1C80396300C7206A /* SXDetails.css in Resources */,
 				44E5B27C1C80396300C7206A /* Info.plist in Resources */,
+				443EAD201C8479F000BFAFB5 /* Details.css in Resources */,
 				44E5B2B01C804B0900C7206A /* KNNewsDetailBottomCell.xib in Resources */,
 				44985B711C7D7B1400BD7B61 /* Main.storyboard in Resources */,
 				44E5B2AE1C80492C00C7206A /* KNReplyHeaderView.xib in Resources */,

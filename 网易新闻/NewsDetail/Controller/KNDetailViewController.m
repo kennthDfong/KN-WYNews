@@ -38,7 +38,6 @@
 @property (nonatomic, strong) NSArray *searchKeyword;
 @property (nonatomic, strong) NSArray *newsArray;
 
-
 - (IBAction)backBtnClick:(id)sender;
 @end
 
@@ -70,8 +69,7 @@
 }
 
 - (IBAction)replyBtnClikc:(id)sender {
-    //出栈
-    [self.navigationController popToRootViewControllerAnimated:YES];
+  
     
 }
 
@@ -131,8 +129,60 @@
 }
 
 
-- (void)showInWebView {
+#pragma mark -   *********** 拼接html语言，设置显示在webView的方式 *********
+- (void)showInWebView
+{
+    NSMutableString *html = [NSMutableString string];
+    [html appendString:@"<html>"];
+    [html appendString:@"<head>"];
+    [html appendFormat:@"<link rel=\"stylesheet\" href=\"%@\">",[[NSBundle mainBundle] URLForResource:@"Details.css" withExtension:nil]];
+    [html appendString:@"</head>"];
     
+    [html appendString:@"<body style=\"background:#f6f6f6\">"];
+    [html appendString:[self touchBody]];
+    [html appendString:@"</body>"];
+    
+    [html appendString:@"</html>"];
+    
+    [self.webView loadHTMLString:html baseURL:nil];
+}
+
+- (NSString *)touchBody
+{
+    NSMutableString *body = [NSMutableString string];
+    [body appendFormat:@"<div class=\"title\">%@</div>",self.detailModel.title];
+    [body appendFormat:@"<div class=\"time\">%@</div>",self.detailModel.ptime];
+    if (self.detailModel.body != nil) {
+        [body appendString:self.detailModel.body];
+    }
+    // 遍历img
+    for (KNDetailImgModel *detailImgModel in self.detailModel.img) {
+        NSMutableString *imgHtml = [NSMutableString string];
+        
+        // 设置img的div
+        [imgHtml appendString:@"<div class=\"img-parent\">"];
+        
+        // 数组存放被切割的像素
+        NSArray *pixel = [detailImgModel.pixel componentsSeparatedByString:@"*"];
+        CGFloat width = [[pixel firstObject]floatValue];
+        CGFloat height = [[pixel lastObject]floatValue];
+        // 判断是否超过最大宽度
+        CGFloat maxWidth = [UIScreen mainScreen].bounds.size.width * 0.96;
+        if (width > maxWidth) {
+            height = maxWidth / width * height;
+            width = maxWidth;
+        }
+        
+        NSString *onload = @"this.onclick = function() {"
+        "  window.location.href = 'sx:src=' +this.src;"
+        "};";
+        [imgHtml appendFormat:@"<img onload=\"%@\" width=\"%f\" height=\"%f\" src=\"%@\">",onload,width,height,detailImgModel.src];
+        // 结束标记
+        [imgHtml appendString:@"</div>"];
+        // 替换标记
+        [body replaceOccurrencesOfString:detailImgModel.ref withString:imgHtml options:NSCaseInsensitiveSearch range:NSMakeRange(0, body.length)];
+    }
+    return body;
 }
 
 - (void)sendRequestWithURL:(NSString *)url {
@@ -171,16 +221,27 @@
     
 }
 
-/*
-#pragma mark - Navigation
+#pragma ********* tableView 数据源和代理方法相关  *********
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
 }
-*/
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
+    }
+    
+    return cell;
+}
+
+
+#pragma - mark 返回按钮
 - (IBAction)backBtnClick:(id)sender {
+    //出栈
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end
