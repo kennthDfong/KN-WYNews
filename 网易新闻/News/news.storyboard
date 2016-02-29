@@ -693,6 +693,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WMp-It-ldb" id="wWf-Vz-H3a"/>
+                                    <outlet property="delegate" destination="WMp-It-ldb" id="u0q-eg-6as"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q43-9V-RMS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
@@ -709,7 +713,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="back:" destination="WMp-It-ldb" eventType="touchUpInside" id="5xe-Ua-H99"/>
+                                            <action selector="backBtnClick:" destination="WMp-It-ldb" eventType="touchUpInside" id="skj-Tc-mwJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -722,6 +726,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="uw8-FF-Lgp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="47b-z2-Rgm" id="A9P-Bh-kXf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbK-kr-ZYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

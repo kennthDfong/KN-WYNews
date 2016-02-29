@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KNReplyModel.h"
 
 @interface KNReplyViewController : UIViewController
+
+@property (nonatomic, strong) NSMutableArray *replyArray;
 
 @end

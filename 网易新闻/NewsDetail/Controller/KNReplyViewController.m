@@ -7,12 +7,37 @@
 //
 
 #import "KNReplyViewController.h"
+#import "KNReplyHeaderVIew.h"
+#import "KNReplyCell.h"
 
-@interface KNReplyViewController ()
+@interface KNReplyViewController () <UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)backBtnClick:(id)sender;
+
 
 @end
 
 @implementation KNReplyViewController
+
+static NSString *identifier = @"replyCell";
+
+- (IBAction)backBtnClick:(id)sender {
+    
+    //从系统的栈中pop出一个controller
+    [self.navigationController popViewControllerAnimated:YES];
+
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    //设置不进行缩进
+    self.automaticallyAdjustsScrollViewInsets = NO;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
