@@ -33,6 +33,9 @@
         NSString *imgUrl2 = nil;
     
         if (ADarray.count > 1) {
+        
+            
+            //sdsasdasd as dasd asdsdads
             imgUrl2 = ADarray[1][@"res_url"][0];
         }
         
